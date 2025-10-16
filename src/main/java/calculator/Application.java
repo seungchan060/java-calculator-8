@@ -1,6 +1,8 @@
 package calculator;
 
 import camp.nextstep.edu.missionutils.Console;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Application {
     public static void main(String[] args) {
@@ -14,6 +16,12 @@ public class Application {
         } finally {
             Console.close();
         }
+    }
+}
+
+class StringCalculator {
+    public static int sum(String input) {
+
     }
 }
 
