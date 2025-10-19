@@ -49,9 +49,30 @@ class StringCalculator {
         boolean hasNumber = false;
         int current = 0;
 
+        while (i < input.length()) {
+            char c = input.charAt(i);
 
+            if (c >= '0' && c <= '9') {
+                hasNumber = true;
+                current = (current * 10) + (c - '0'); // 십진수 자리 밀기(×10) + 새 자리 더하기
+            } else if (delimiter.contains(c)) {
+                if (!hasNumber) {
+                    throw new IllegalArgumentException("연속 구분자 또는 (맨앞, 맨뒤)구분자는 허용되지 않습니다.");
+                }
+                sum += current;
+                current = 0;
+                hasNumber = false;
+            } else {
+                throw new IllegalArgumentException("허용되지 않은 구분자: " + c);
+            }
+            i++;
+        }
 
-        return 0;
+        if (!hasNumber) {
+            throw new IllegalArgumentException("연속 구분자 또는 (맨앞, 맨뒤)구분자는 허용되지 않습니다.");
+        }
+        sum += current;
+        return sum;
     }
 }
 
