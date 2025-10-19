@@ -44,6 +44,13 @@ class StringCalculator {
             }
         }
 
+        int sum = 0;
+        int i = start;
+        boolean hasNumber = false;
+        int current = 0;
+
+
+
         return 0;
     }
 }
