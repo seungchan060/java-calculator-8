@@ -21,7 +21,11 @@ public class Application {
 
 class StringCalculator {
     public static int sum(String input) {
+        if (input.isEmpty()) { // 빈 값이 들어온다면 0 출력
+            return 0;
+        }
 
+        return 0;
     }
 }
 
