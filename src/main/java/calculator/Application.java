@@ -25,6 +25,11 @@ class StringCalculator {
             return 0;
         }
 
+        int start = 0;
+        Set<Character> delimiter = new HashSet<>();
+        delimiter.add(',');
+        delimiter.add(':');
+
         return 0;
     }
 }
