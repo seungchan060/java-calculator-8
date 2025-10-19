@@ -30,6 +30,20 @@ class StringCalculator {
         delimiter.add(',');
         delimiter.add(':');
 
+        if (input.startsWith("//")) {
+            int nl = input.indexOf("\\n");
+            if (nl < 0) throw new IllegalArgumentException("커스텀 구분자 형식이 올바르지 않습니다.");
+            String header = input.substring(2, nl);
+            if (header.length() != 1) {
+                throw new IllegalArgumentException("커스텀 구분자는 한 글자여야 합니다.");
+            }
+            delimiter.add(header.charAt(0));
+            start = nl + 1; // 본문 시작
+            if (start >= input.length()) {
+                return 0; // 빈 값 0 출력
+            }
+        }
+
         return 0;
     }
 }
