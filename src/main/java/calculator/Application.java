@@ -11,8 +11,6 @@ public class Application {
             String input = Console.readLine();
             int result = StringCalculator.sum(input);
             System.out.println("결과 : " + result);
-        } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] " + e.getMessage());
         } finally {
             Console.close();
         }
